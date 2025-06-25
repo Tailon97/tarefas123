@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
-    $('ul').on('click', 'li', function() { $(this).toggleClass('tarefa-concluida'); 
+    $('ul').on('click', 'li', function() { 
+        $(this).toggleClass('tarefa-concluida'); 
     });
 
     $('#formulario').on('submit', function(e){
@@ -24,7 +25,7 @@ $(document).ready(function(){
     })
 
         $('ul').on('click', '.delete-btn', function(e) {
-        e.stopPropagation();
+            e.stopPropagation();
         $(this).parent().fadeOut(500, function() {
         $(this).remove();
         });
