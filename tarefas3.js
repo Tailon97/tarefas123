@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     $('ul').on('click', 'li', function() { 
-        $(this).toggleClass('tarefa-concluida'); 
+        $(this).find('.texto-tarefa').toggleClass('tarefa-concluida'); 
     });
 
     $('#formulario').on('submit', function(e){
@@ -10,7 +10,10 @@ $(document).ready(function(){
         const valorTarefa = $('#valor-tarefa').val();
 
     if(valorTarefa.trim() !== ''){
-        const NovaTarefa = $('<li></li>').text(valorTarefa);
+
+        const textoSpan = $('<span></span>').addClass('texto-tarefa').text(valorTarefa);
+
+        const NovaTarefa = $('<li></li>').append(textoSpan);
 
         const deleteButton = $('<button class="delete-btn">Excluir</button>');
 
